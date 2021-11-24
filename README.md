@@ -45,6 +45,7 @@ Here are some of the known issues with this version, which hopefully will get fi
 <li>The game does NOT recognize capital 'A', 'D' or 'R' as input. Check if Caps Lock is enabled. </li>
 <li>The collisions with the platforms are a bit wonky.</li>
 <li>Some of the Hermite meshes are slightly broken.</li>
+<li>The code is still very rough, and could use some refactoring.</li>
 </ul>
 
 ## Additional things
