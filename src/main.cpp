@@ -21,6 +21,9 @@ int nv_P;
 // Physics paramters
 double delta = 1.5; // forza di gravita
 double speedY = 20; // velocita verticale (pixel per frame)
+
+
+double check;
 double speedX = 0;  // velocita orizzontale (pixel per frame)
 
 double accelerazione = 1; // forza di accelerazione data dalla tastiera
@@ -123,17 +126,17 @@ void drawScene(void)
 	// testo dei punti
 	if (!gameOver)
 	{
-		sprintf(points_string, "%d m", heightValue);
+		sprintf(points_string, "%d m", heightValue/100);
 		gltSetText(points_display, points_string);
 		gltBeginDraw();
 		gltColor(1.0f, 1.0f, 1.0f, 1.0f);
-		gltDrawText2D(textScore, 10, 10, 1.0);
+		gltDrawText2D(textScore, 10, 10, 1.5);
 		gltColor(1.0f, 1.0f, 0.0f, 1.0f);
-		gltDrawText2D(points_display, 10, 25, 1.0);
+		gltDrawText2D(points_display, 10, 40, 1.5);
 		gltEndDraw();
 	} else {
 		gltSetText(textScore, "Game Over!");
-		sprintf(points_string, "You have reached %d m!", heightValue);
+		sprintf(points_string, "You have reached %d m!", heightValue/100);
 		gltSetText(points_display, points_string);
 		gltBeginDraw();
 		gltColor(1.0f, 0.0f, 0.0f, 1.0f);

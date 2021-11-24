@@ -22,7 +22,7 @@ void Player::buildMesh()
 	colors.clear();
 
 	specialMesh.setCenterPoint(vec3(0.35,0.43, 0.0));
-	hermiteMeshLoaded = specialMesh.loadFromFile("assets/doodle.json");
+	hermiteMeshLoaded = specialMesh.loadFromFile("assets/doodle.json") && SPECIAL_MESH;
 	if (hermiteMeshLoaded) {
 		specialMesh.initMesh();
 		vertices = specialMesh.getVerticesVector();
