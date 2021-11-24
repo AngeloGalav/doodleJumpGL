@@ -37,7 +37,7 @@ Here are some of the known issues with this version, which hopefully will get fi
 <li>The game does NOT recognize capital 'A', 'D' or 'R' as input. Check if Caps Lock is enabled. </li>
 <li>The collisions with the platforms are a bit wonky.</li>
 <li>Some of the Hermite meshes are slightly broken.</li>
-<li>The code is still <i>very rough</i>, and could use some refactoring.</li>
+<li>The code is still a bit <i>rough</i>, and could use some refactoring.</li>
 <li>On Windows, there could be some problems with the graphics card driver (i.e. the igdumd64.dll access error). This is due to the nupengl library, so I recommend installing freeglut and GLEW manually.</li>
 </ul>
 
