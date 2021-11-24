@@ -22,7 +22,7 @@ void Player::buildMesh()
 	colors.clear();
 
 	specialMesh.setCenterPoint(vec3(0.35,0.43, 0.0));
-	hermiteMeshLoaded = specialMesh.loadFromFile("assets/doodle.json");
+	hermiteMeshLoaded = specialMesh.loadFromFile("assets/doodle.json") && SPECIAL_MESH;
 	if (hermiteMeshLoaded) {
 		specialMesh.initMesh();
 		vertices = specialMesh.getVerticesVector();
@@ -77,7 +77,7 @@ void Player::drawMesh(int ModelUniform){
     float distacco_da_terra_n = -distacco_da_terra;
 
 	glBindVertexArray(0);
-	vec2 position_ = vec2(position.x, position.y + distacco_da_terra_n );
+	vec2 position_ = vec2(position.x, position.y + distacco_da_terra_n);
 	vec2 scaleFactor;
 
 	vec2 eyesScaleFactor = vec2(2, 6);

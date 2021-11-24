@@ -123,7 +123,7 @@ void drawScene(void)
 	// testo dei punti
 	if (!gameOver)
 	{
-		sprintf(points_string, "%d m", heightValue);
+		sprintf(points_string, "%d m", heightValue/100);
 		gltSetText(points_display, points_string);
 		gltBeginDraw();
 		gltColor(1.0f, 1.0f, 1.0f, 1.0f);
@@ -133,7 +133,7 @@ void drawScene(void)
 		gltEndDraw();
 	} else {
 		gltSetText(textScore, "Game Over!");
-		sprintf(points_string, "You have reached %d m!", heightValue);
+		sprintf(points_string, "You have reached %d m!", heightValue/100);
 		gltSetText(points_display, points_string);
 		gltBeginDraw();
 		gltColor(1.0f, 0.0f, 0.0f, 1.0f);
