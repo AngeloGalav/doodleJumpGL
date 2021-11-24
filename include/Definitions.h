@@ -13,6 +13,6 @@
 #define COLLIDER_COLORS 1.0, 0.0, 1.0, 1.0
 #define PLATFORM_NUMBER 10
 #define DEBUG_MODE false
-#define SPECIAL_MESH false
+#define SPECIAL_MESH true
 
 #endif

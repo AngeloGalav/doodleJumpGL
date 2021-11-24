@@ -1,3 +1,6 @@
 /.vscode
 /src/*.o
 /DoodleJumpGL
+/.vs/
+/x64/Debug
+/x64/

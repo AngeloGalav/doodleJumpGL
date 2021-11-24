@@ -1,2 +1,8 @@
-﻿  main.cpp
-  doodino.vcxproj -> C:\Users\ASUS\Desktop\doodleJumpGL\x64\Debug\doodino.exe
+﻿  GestioneEventi.cpp
+  Ground.cpp
+  Platform.cpp
+  Player.cpp
+  Sky.cpp
+  main.cpp
+  Generating Code...
+  doodino.vcxproj -> C:\Users\ASUS\Desktop\basta\doodleJumpGL\x64\Debug\doodino.exe
