@@ -1,7 +1,5 @@
 # doodleJumpGL
 
-## What is this?
-
 This is the code for the first project for the Computer Graphics course at the University Of Bologna. The goal was to make an interactable 2D scene in OpenGL.
 I decided to make a clone of the mobile game "DoodleJump", which is the perfect example of a simple yet fun game.
 
