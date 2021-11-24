@@ -21,6 +21,7 @@ void Player::buildMesh()
 	vertices.clear();
 	colors.clear();
 
+	// costruzione della mesh "speciale", fatto con una curva di Hermite
 	specialMesh.setCenterPoint(vec3(0.35,0.43, 0.0));
 	hermiteMeshLoaded = specialMesh.loadFromFile("assets/doodle.json") && SPECIAL_MESH;
 	if (hermiteMeshLoaded) {
@@ -30,6 +31,8 @@ void Player::buildMesh()
 		if (DEBUG_MODE) std::cout << "vertices: " << vertices.size() << std::endl;
 	}
 	else {
+		// se il file non è stato trovato, oppure ho specificato che non lo voglio, 
+		// disegno un normale cerchio
 		float stepA = (2 * PI) / nTriangles;
 
 		vertices.push_back(vec3(0.0, 0.0, 0.0));
@@ -43,6 +46,8 @@ void Player::buildMesh()
 			colors.push_back(color_top);
 		}
 	}
+
+	// costruzione dei collider
 	buildColliders();
 
 	// costruzione degli occhi
@@ -87,13 +92,10 @@ void Player::drawMesh(int ModelUniform){
 	if (!hermiteMeshLoaded){
 		scaleFactor = vec2(30, 30);
 		glBindVertexArray(VAO);	
-		//matrice di Trasformazione della Palla
 		Model = mat4(1.0);
 		Model = translate(Model, vec3(position_ , 0.0f));
 		Model = scale(Model, vec3(scaleFactor, 1.0));
 		glUniformMatrix4fv(ModelUniform, 1, GL_FALSE, value_ptr(Model)); // assegno il valore di model allo uniform nello shader
-		
-		//Disegna Corpo della palla  
 		glDrawArrays(GL_TRIANGLE_FAN, 0, (nTriangles) + 2);
 	} else {
 		scaleFactor = vec2(200, 200);
@@ -112,6 +114,7 @@ void Player::drawMesh(int ModelUniform){
 		else glDrawArrays(GL_TRIANGLE_FAN, specialMesh.getVerticesVector().size(), (nTriangles) + 2);
 	}
 
+	// se in modalità debug, disegna anche i collider
 	if (DEBUG_MODE){
 		Model = mat4(1.0);
 		Model = translate(Model, vec3(position_, 0.0f));
@@ -129,6 +132,10 @@ void Player::drawMesh(int ModelUniform){
 	glBindVertexArray(0);
 }
 
+/**
+ * @brief costruisce i limiti per la AABB per la collision detection.
+ * 
+ */
 void Player::buildColliders(){
 	vec2 min = vertices.at(0); 
 	vec2 max = vertices.at(0); // minimun and maximum coordinates
@@ -144,6 +151,12 @@ void Player::buildColliders(){
 	bottomRightCorner.y = min.y;
 }
 
+/**
+ * @brief assegna i valori di inizializzazione.
+ * 
+ * @param x 
+ * @param y 
+ */
 void Player::setupValues(float x, float y){
     this->position.x = x;
     this->position.y = y;

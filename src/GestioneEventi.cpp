@@ -9,7 +9,6 @@ extern int heightValue;
 extern double speedY; //velocita verticale (pixel per frame)
 extern double delta;
 extern double accelerazione ; // forza di accelerazione data dalla tastiera
-extern double decelerazione; //decelerazione in assenza di input
 extern Ground terra;
 extern Player playerBall;
 extern vector<Platform*> platforms;
@@ -30,11 +29,12 @@ void keyboardPressedEvent(unsigned char key, int x, int y)
 	case 'd':
 		pressing_right = true;
 		break;
-	case 'r':
+
+	case 'r': // pulsante da premere per far ripartire il gioco in caso di gameover
 		if (gameOver) hasRestarted = true;
 		break;
 	
-	case 27:
+	case 27: // pulsante esc per uscire
 		exit(0);
 		break;
 
@@ -63,18 +63,18 @@ void keyboardReleasedEvent(unsigned char key, int x, int y)
 void update(int a)
 {
 	bool moving = false;
-	//Movimento della palla in orizzontale
 
+	// Movimento della palla in orizzontale
 	if (pressing_left) speedX -= accelerazione;
 	if (pressing_right) speedX += accelerazione;
 
 	moving = pressing_left || pressing_right;
 
-	if (!moving) {   //Se non mi sto muovendo con i tasti a e d decremento od incremento la velocita' iniziale fino a portarla
+	if (!moving) {   // Se non mi sto muovendo con i tasti a e d decremento od incremento la velocita' iniziale fino a portarla
 					 // a zero e la palla continua a rimbalzare sul posto
 		if (speedX > 0)
 		{
-			speedX -= 1;
+			speedX -= 1; // decelerazione in assenza di input
 			if (speedX < 0)
 				speedX = 0;
 		}
@@ -87,7 +87,7 @@ void update(int a)
 		}
 	}
 
-	//Aggioramento della posizione in x della pallina, che regola il movimento orizzontale
+	// Aggioramento della posizione in x della pallina, che regola il movimento orizzontale
 
 	playerBall.position.x += speedX;
 
@@ -104,17 +104,17 @@ void update(int a)
 		speedX = -speedX * 0.8;
 	}
 
-	// Gestione del rimbalzo e quindi dell'altezza da terra
-
-	//Rimbalzo
+	// deceleraione verso il basso
 	speedY -= delta;	
 
 	// se doodle raggiunge la massima altezza su schermo, per permettere lo spostamento fermo doodle
 	// altrimenti, può andare avanti come sempre
 	if (!stalledInAir) playerBall.distacco_da_terra -= speedY;
-			
+	
+	// calcola collisioni
 	processCollisions();
 	
+	// codice per spostamento schermo quando si raggiunge una soglia
 	if (playerBall.topLeftCorner.y >= (SCREEN_HEIGHT*5/6) && speedY > 0){
 		stalledInAir = true;
 		for (Platform* plat : platforms){	
@@ -126,6 +126,7 @@ void update(int a)
 
 	} else stalledInAir = false;
 
+	// riutilizzo delle piattaforme in modo ottimizzato
 	Platform* plat = platforms.front();
 	if (plat->position.y <= -10){
 		plat->position.y = (platforms.back())->position.y + 100;

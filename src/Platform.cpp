@@ -36,6 +36,8 @@ void Platform::drawMesh(int ModelUniform){
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
 	// setup della mostra dei colliders uuuh (da mettere in toggle durante la modalità debug)
+	// per le piattaforme ho lasciato che i colliders venissero mostrati sempre, siccome mi sembrava piu'
+	// carino cosi'.
 	Model = mat4(1.0);
 	Model = translate(Model, vec3(position_, 0.0f));
 	Model = scale(Model, vec3(scaleFactor, 1.0));
@@ -70,7 +72,7 @@ void Platform::buildMesh(){
 
 	buildColliders();
 
-	///WARNING: this is just debug code, to be deleted in the final version
+	// geometria del collider 
 	vertices.push_back(vec3(topLeftCorner.x, bottomRightCorner.y, 0.0));
 	vertices.push_back(vec3(bottomRightCorner.x, bottomRightCorner.y, 0.0));
 	vertices.push_back(vec3(bottomRightCorner.x, topLeftCorner.y, 0.0));
@@ -89,7 +91,7 @@ void Platform::movePlatform(){
 
 void Platform::buildColliders(){
 	vec2 min = vertices.at(0); 
-	vec2 max = vertices.at(0); // minimun and maximum coordinates
+	vec2 max = vertices.at(0); // coordinate massime e minime dei punti
 	for (vec3 vert : vertices){
 		if (min.x > vert.x) min.x = vert.x;
 		if (min.y > vert.y) min.y = vert.y;

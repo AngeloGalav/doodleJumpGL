@@ -22,12 +22,9 @@ int nv_P;
 double delta = 1.5; // forza di gravita
 double speedY = 20; // velocita verticale (pixel per frame)
 
-
-double check;
 double speedX = 0;  // velocita orizzontale (pixel per frame)
 
 double accelerazione = 1; // forza di accelerazione data dalla tastiera
-double decelerazione = 1; // decelerazione in assenza di input
 
 GLTtext *textScore;
 GLTtext *points_display;

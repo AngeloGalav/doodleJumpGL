@@ -52,6 +52,7 @@ void Ground::buildMesh(){
 	vertices.clear();
 	colors.clear();
 
+	// codice per la costruizione e la lettura da file dei due elemeti di scena
 	bool loadedCactus, loadedRock;
 	cactus.setCenterPoint(vec3(0.5,0.43, 0.0));
 	loadedCactus = cactus.loadFromFile("assets/cactus.json");
@@ -65,6 +66,7 @@ void Ground::buildMesh(){
 
 	hasLoadedFiles = loadedCactus && loadedRock;
 
+	// geometria del suolo
 	vertices.push_back(vec3(0.0, 0.0,0.0));
 	colors.push_back(color_bottom);
 	vertices.push_back(vec3(1.0, 0.0, 0.0));
