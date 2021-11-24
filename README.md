@@ -47,7 +47,7 @@ The game features a debug mode, which shows the main character's colliders, as w
 Also, there's a special Mesh for the character made with an Hermite curve, which is disabled by default.  
 Both of these features can be enabled by modifying their respective macros in `Definitions.h`.
 
-## Scheenshots
+## Screenshots
 
 <figure>
 <img src="win_screenshots/image1.png" alt="first win screenshot" style="zoom:50%;" />
