@@ -1,6 +1,6 @@
 # doodleJumpGL
 
-## What is this thing?!
+## What is this?
 
 This is the code for the first project for the Computer Graphics course at the University Of Bologna. The goal was to make an interactable 2D scene in OpenGL.
 I decided to make a clone of the mobile game "DoodleJump", which is the perfect example of a simple yet fun game.
@@ -28,7 +28,7 @@ All 3 can be easily downloaded with `nuget` by installing the `nupengl.core` pac
 
 The project also uses two additional libraries: `json.hpp` and `gltext.h`, which are both included in the project. 
 
-## How do you play this darn game?!
+## How to play
 
 You simply press `a` to go left and `d` to go right. The goal is to reach the highest point possible. If you die, you can simply press `r` to restart (as prompted). 
 
