@@ -1,7 +1,5 @@
 # doodleJumpGL
 
-## What is this thing?!
-
 This is the code for the first project for the Computer Graphics course at the University Of Bologna. The goal was to make an interactable 2D scene in OpenGL.
 I decided to make a clone of the mobile game "DoodleJump", which is the perfect example of a simple yet fun game.
 
@@ -34,7 +32,7 @@ Both can be easily downloaded with `pacman` or `apt-get`.
 
 The project also uses two additional libraries: `json.hpp` and `gltext.h`, which are both included in the project. 
 
-## How do you play this darn game?!
+## How to play
 
 You simply press `a` to go left and `d` to go right. The goal is to reach the highest point possible. If you die, you can simply press `r` to restart (as prompted). 
 
@@ -45,7 +43,7 @@ Here are some of the known issues with this version, which hopefully will get fi
 <li>The game does NOT recognize capital 'A', 'D' or 'R' as input. Check if Caps Lock is enabled. </li>
 <li>The collisions with the platforms are a bit wonky.</li>
 <li>Some of the Hermite meshes are slightly broken.</li>
-<li>The code is still <i>very rough</i>, and could use some refactoring.</li>
+<li>The code a bit <i>rough</i>, and could use some refactoring.</li>
 </ul>
 
 ## Additional things
