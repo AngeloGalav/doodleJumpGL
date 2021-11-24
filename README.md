@@ -27,6 +27,7 @@ This project uses the following libraries:
 <ul>
 <li>freeGLUT - an implementation of GLUT</li>
 <li>GLEW</li>
+<li>glm - the openGL math library</li>
 </ul>
 
 Both can be easily downloaded with `pacman` or `apt-get`.
