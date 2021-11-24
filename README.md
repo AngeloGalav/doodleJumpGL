@@ -24,7 +24,7 @@ This project uses the following libraries:
 <li>glm - the openGL math library</li>
 </ul>
 
-Both can be easily downloaded with `nuget` by installing the `nupengl.core` package.
+All 3 can be easily downloaded with `nuget` by installing the `nupengl.core` package.
 
 The project also uses two additional libraries: `json.hpp` and `gltext.h`, which are both included in the project. 
 
