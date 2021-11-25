@@ -12,7 +12,7 @@
 #define PI   3.14159265358979323846
 #define COLLIDER_COLORS 1.0, 0.0, 1.0, 1.0
 #define PLATFORM_NUMBER 10
-#define DEBUG_MODE true
-#define SPECIAL_MESH true
+#define DEBUG_MODE false
+#define SPECIAL_MESH false
 
 #endif
