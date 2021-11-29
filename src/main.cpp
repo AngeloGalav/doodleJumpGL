@@ -59,7 +59,7 @@ void setupGame(){
 
 	platforms.clear();
 
-	// dichiarazione/riepimento dell'array di piattaforme
+	// dichiarazione/riepimento del vettore di piattaforme
 	for (int i = 0; i < PLATFORM_NUMBER; i++){
 		randWidth = rand() % 7;
 		coinFlip  = rand() % 2;

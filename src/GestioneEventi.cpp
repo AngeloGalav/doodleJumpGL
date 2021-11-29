@@ -151,7 +151,7 @@ void processCollisions(){
 		if(checkCollision((Collider) playerBall, (Collider) *plat)){
 			if (speedY < 0) speedY = 30;   // doodle qui salta yee
 		}
-		plat->movePlatform();
+		plat->movePlatform(); // muovi le piattaforme movibili
 	}
 
 	// controllo se la terra non sia troppo in basso, per evitari calcoli inutili in caso sia troppo lontana...
